@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Add post for {{user.first_name}}</h1>
+    <form action="/user/{{user.id}}/posts/new" method="POST">
+        Title: <input type="text" name="title" placeholder="Add a title">
+        Content: <input type="content" name="content" placeholder="Add what you want to share">
+        <button>Add</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{user.first_name}}</title>
+</head>
+<body>
+    <h1>{{user.first_name}} {{user.last_name}}</h1>
+    <button><a href="/users/{{user.id}}/edit"> Edit</a></button>
+    <form action="/users/{{user.id}}/delete" method="POST">
+        <button>Delete</button>
+    </form>
+    <br>
+    {% if user.query.get(user.id).posts %}
+    <h2>Posts</h2>
+    <ul>    
+        {% for post in user.posts %}
+            <li><a href="/posts/{{post.id}}"> {{post.title}}</a></li>
+            <!-- <li><a href="/posts/{{user.query.get(user.id).posts[0].id}}">{{user.query.get(user.id).posts[0].title}}</a></li> -->
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <button><a href="/user/{{user.id}}/posts/new">Add a post</a></button>
+    <a href="/users">Go Back</a>
+</body>
+</html>

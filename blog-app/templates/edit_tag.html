@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit {{tag.name}} Tag</title>
+</head>
+<body>
+    <h1>Edit "{{tag.name}}" Tag</h1>
+    <form action="/tags/{{tag.id}}/edit" method="POST">
+        Name: <input type="text" name="name" value="{{tag.name}}">
+        <button>Edit</button>
+    </form>
+</body>
+</html>
